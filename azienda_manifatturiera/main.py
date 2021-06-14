@@ -5,10 +5,10 @@ class Modello():
 
     def modifica_descrizione(self, nuova_desc):
         self.descrizione = nuova_desc
-        print("\n Descrizione modificata correttamente !")
+        print("\nDescrizione modificata correttamente !")
 
     def stampa_modello(self):
-        print("Nome: %s\nDescrizione: %s\n\n" %(self.nome, self.descrizione))
+        print("\nNome: %s\nDescrizione: %s\n" %(self.nome_modello, self.descrizione))
 
 class Dipartimenti():
     def __init__(self, nome_dipartimento):
@@ -32,4 +32,18 @@ class Dipartimenti():
 
     
 
-    
+modello1 = Modello("plastica", "modello utile per creare piccole strutture solide")    
+modello2 = Modello("alluminio", "modello utile per creare fili conduttori di elettricità")    
+
+
+modello1.stampa_modello()
+modello1.modifica_descrizione("modello utile per creare piccole strutture geometriche")
+modello1.stampa_modello()
+
+
+dipartimento1 = Dipartimenti("edilizia")
+
+
+dipartimento1.aggiungi(modello1)
+dipartimento1.aggiungi(modello2)
+dipartimento1.stampa_dipartimenti()
