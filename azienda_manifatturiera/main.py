@@ -30,6 +30,14 @@ class Dipartimenti():
         for modello in self.modelli:
             modello.stampa_modello()
 
+    def cerca(self, nome_modello):
+        for modello in self.modelli:
+            if modello.nome_modello == nome_modello:
+                print("Risultato della ricerca per nome:")
+                modello.stampa_modello()
+            else:
+                print("Modello non trovato !")
+
     
 
 modello1 = Modello("plastica", "modello utile per creare piccole strutture solide")    
@@ -43,7 +51,9 @@ modello1.stampa_modello()
 
 dipartimento1 = Dipartimenti("edilizia")
 
-
-dipartimento1.aggiungi(modello1)
 dipartimento1.aggiungi(modello2)
+dipartimento1.aggiungi(modello1)
+
 dipartimento1.stampa_dipartimenti()
+print("------------------------\n")
+dipartimento1.cerca("alluminio")
